@@ -13,6 +13,26 @@ void function_zmienna_statyczna();
 void function_zmienna_wykla();
 void wskazniki();
 
+/*void disp_reference(int& ref_val) {
+	printf("Value of reference: %d", ref_val);
+	ref_val++;
+}*/
+
+
+// argumenty do funkcji(w jêzyku C) mozna dodawac na dwa sposoby: przez wartosc i przez wskaznik
+
+
+void disp_copy_val(int val) {
+	printf("Value of copy: %d\n", val);
+	val++;
+}
+
+void disp_pointer_value(int* p_val) {
+	printf("Value of copy: %d\n", *p_val);
+	*p_val += 1;
+}
+
+
 void main()
 {
 
@@ -45,6 +65,18 @@ void main()
 
 	wskazniki();
 
+	int int_value = 45;
+
+	disp_copy_val(int_value);
+
+	disp_copy_val(int_value);
+
+
+	int_value = 90;
+
+	disp_pointer_value(&int_value);
+
+	printf("%d\n", int_value);
 
 	printf("\n\n");
 	system("pause");
